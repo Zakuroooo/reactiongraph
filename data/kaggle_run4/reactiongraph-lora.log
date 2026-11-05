@@ -1,0 +1,174 @@
+[{"stream_name":"stderr","time":7.447213223,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.447268339,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.447275396,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.447280386,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.060205554,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.060244034,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.060252122,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.060254767,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":16.162010508,"data":"using /kaggle/input/datasets/pranaysarkar04/reactiongraph/lora_data.json\n"}
+,{"stream_name":"stdout","time":16.162050284,"data":"alongside it: ['grading.py', 'lora_data.json', 'run_lora.py']\n"}
+,{"stream_name":"stdout","time":47.828849497,"data":"device cuda Tesla T4\n"}
+,{"stream_name":"stdout","time":47.836889481,"data":"peft import ok\n"}
+,{"stream_name":"stdout","time":48.031625191,"data":"device cuda Tesla T4\n"}
+,{"stream_name":"stdout","time":48.031671868,"data":"peft import ok\n"}
+,{"stream_name":"stdout","time":48.220464566,"data":"data file /kaggle/input/datasets/pranaysarkar04/reactiongraph/lora_data.json\n"}
+,{"stream_name":"stdout","time":48.220503818,"data":"data {'train': 20000, 'val': 200, 'test': 500, 'few_shot': 3}\n"}
+,{"stream_name":"stdout","time":48.422760624,"data":"data file /kaggle/input/datasets/pranaysarkar04/reactiongraph/lora_data.json\n"}
+,{"stream_name":"stdout","time":48.422793828,"data":"data {'train': 20000, 'val': 200, 'test': 500, 'few_shot': 3}\n"}
+,{"stream_name":"stderr","time":49.099907344,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":49.302242548,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":49.302292085,"data":"\n"}
+,{"stream_name":"stderr","time":49.30229885,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":72.638348107,"data":"\rLoading weights:   0%|          | 0/338 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 0/338 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":73.42187789,"data":"\rLoading weights:   0%|          | 0/338 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/338 [00:00\u003c04:27,  1.26it/s]\rLoading weights:  54%|█████▍    | 183/338 [00:00\u003c00:00, 273.73it/s]\rLoading weights:   0%|          | 1/338 [00:00\u003c04:27,  1.26it/s]\rLoading weights:  54%|█████▍    | 183/338 [00:00\u003c00:00, 273.73it/s]\n"}
+,{"stream_name":"stderr","time":73.864104883,"data":"\rLoading weights:   0%|          | 1/338 [00:00\u003c04:27,  1.26it/s]\rLoading weights:  54%|█████▍    | 183/338 [00:00\u003c00:00, 273.73it/s]\rLoading weights:  83%|████████▎ | 279/338 [00:01\u003c00:00, 272.13it/s]\rLoading weights: 100%|██████████| 338/338 [00:01\u003c00:00, 234.80it/s]\n"}
+,{"stream_name":"stderr","time":73.888062068,"data":"\rLoading weights:  83%|████████▎ | 279/338 [00:01\u003c00:00, 272.13it/s]\rLoading weights: 100%|██████████| 338/338 [00:01\u003c00:00, 234.80it/s]\n"}
+,{"stream_name":"stderr","time":73.888092313,"data":"\n"}
+,{"stream_name":"stderr","time":73.888096521,"data":"\rLoading weights:  83%|████████▎ | 279/338 [00:01\u003c00:00, 272.13it/s]\rLoading weights: 100%|██████████| 338/338 [00:01\u003c00:00, 234.80it/s]\n"}
+,{"stream_name":"stdout","time":75.073362876,"data":"methods to run: ['lora']\n"}
+,{"stream_name":"stdout","time":75.275775402,"data":"methods to run: ['lora']\n"}
+,{"stream_name":"stdout","time":75.345569942,"data":"trainable params 4358144 of 1548072448\n"}
+,{"stream_name":"stdout","time":75.547993244,"data":"trainable params 4358144 of 1548072448\n"}
+,{"stream_name":"stdout","time":85.951409667,"data":"val loss before training 1.2471\n"}
+,{"stream_name":"stdout","time":86.15485457,"data":"val loss before training 1.2471\n"}
+,{"stream_name":"stderr","time":89.254120873,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":89.255308146,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 295, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":89.255341064,"data":"    main()\n"}
+,{"stream_name":"stderr","time":89.255345535,"data":"    ~~~~^^\n"}
+,{"stream_name":"stderr","time":89.255348682,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 283, in main\n"}
+,{"stream_name":"stderr","time":89.255352106,"data":"    model = train_lora(model, tokenizer, data)\n"}
+,{"stream_name":"stderr","time":89.25535529,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 205, in train_lora\n"}
+,{"stream_name":"stderr","time":89.255358563,"data":"    scaler.scale(loss).backward()\n"}
+,{"stream_name":"stderr","time":89.255376413,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n"}
+,{"stream_name":"stderr","time":89.255381971,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_tensor.py\", line 631, in backward\n"}
+,{"stream_name":"stderr","time":89.255387737,"data":"    torch.autograd.backward(\n"}
+,{"stream_name":"stderr","time":89.25539307,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":89.255398214,"data":"        self, gradient, retain_graph, create_graph, inputs=inputs\n"}
+,{"stream_name":"stderr","time":89.2554029,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.255407506,"data":"    )\n"}
+,{"stream_name":"stderr","time":89.255411808,"data":"    ^\n"}
+,{"stream_name":"stderr","time":89.25541679,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/autograd/__init__.py\", line 381, in backward\n"}
+,{"stream_name":"stderr","time":89.255422119,"data":"    _engine_run_backward(\n"}
+,{"stream_name":"stderr","time":89.255427054,"data":"    ~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":89.255430924,"data":"        tensors,\n"}
+,{"stream_name":"stderr","time":89.255434922,"data":"        ^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.255439065,"data":"    ...\u003c5 lines\u003e...\n"}
+,{"stream_name":"stderr","time":89.25544362,"data":"        accumulate_grad=True,\n"}
+,{"stream_name":"stderr","time":89.255447857,"data":"        ^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.255452267,"data":"    )\n"}
+,{"stream_name":"stderr","time":89.255456628,"data":"    ^\n"}
+,{"stream_name":"stderr","time":89.255461086,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/autograd/graph.py\", line 869, in _engine_run_backward\n"}
+,{"stream_name":"stderr","time":89.255480575,"data":"    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":89.255485048,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.255490614,"data":"        t_outputs, *args, **kwargs\n"}
+,{"stream_name":"stderr","time":89.255494456,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.255498412,"data":"    )  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":89.255502482,"data":"    ^\n"}
+,{"stream_name":"stderr","time":89.255508312,"data":"torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.32 GiB. GPU 0 has a total capacity of 14.56 GiB of which 378.81 MiB is free. Including non-PyTorch memory, this process has 14.19 GiB memory in use. Of the allocated memory 11.54 GiB is allocated by PyTorch, and 2.51 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n"}
+,{"stream_name":"stderr","time":89.456775396,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":89.45681704,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 295, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":89.456821762,"data":"    main()\n"}
+,{"stream_name":"stderr","time":89.456824657,"data":"    ~~~~^^\n"}
+,{"stream_name":"stderr","time":89.456827077,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 283, in main\n"}
+,{"stream_name":"stderr","time":89.456829685,"data":"    model = train_lora(model, tokenizer, data)\n"}
+,{"stream_name":"stderr","time":89.4568321,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 205, in train_lora\n"}
+,{"stream_name":"stderr","time":89.456834711,"data":"    scaler.scale(loss).backward()\n"}
+,{"stream_name":"stderr","time":89.456837156,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n"}
+,{"stream_name":"stderr","time":89.456839512,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_tensor.py\", line 631, in backward\n"}
+,{"stream_name":"stderr","time":89.456842134,"data":"    torch.autograd.backward(\n"}
+,{"stream_name":"stderr","time":89.456844567,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":89.456846884,"data":"        self, gradient, retain_graph, create_graph, inputs=inputs\n"}
+,{"stream_name":"stderr","time":89.456849357,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.456851792,"data":"    )\n"}
+,{"stream_name":"stderr","time":89.456854091,"data":"    ^\n"}
+,{"stream_name":"stderr","time":89.456856389,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/autograd/__init__.py\", line 381, in backward\n"}
+,{"stream_name":"stderr","time":89.45685899,"data":"    _engine_run_backward(\n"}
+,{"stream_name":"stderr","time":89.456861333,"data":"    ~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":89.45686365,"data":"        tensors,\n"}
+,{"stream_name":"stderr","time":89.456865964,"data":"        ^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.456868317,"data":"    ...\u003c5 lines\u003e...\n"}
+,{"stream_name":"stderr","time":89.456882697,"data":"        accumulate_grad=True,\n"}
+,{"stream_name":"stderr","time":89.456885595,"data":"        ^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.456887896,"data":"    )\n"}
+,{"stream_name":"stderr","time":89.456890135,"data":"    ^\n"}
+,{"stream_name":"stderr","time":89.456892378,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/autograd/graph.py\", line 869, in _engine_run_backward\n"}
+,{"stream_name":"stderr","time":89.456894879,"data":"    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":89.456897338,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.45689979,"data":"        t_outputs, *args, **kwargs\n"}
+,{"stream_name":"stderr","time":89.456902094,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.456904433,"data":"    )  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":89.456906761,"data":"    ^\n"}
+,{"stream_name":"stderr","time":89.456910497,"data":"torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.32 GiB. GPU 0 has a total capacity of 14.56 GiB of which 378.81 MiB is free. Including non-PyTorch memory, this process has 14.19 GiB memory in use. Of the allocated memory 11.54 GiB is allocated by PyTorch, and 2.51 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n"}
+,{"stream_name":"stderr","time":89.456914031,"data":"\n"}
+,{"stream_name":"stderr","time":89.456916651,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":89.456918947,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 295, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":89.456921567,"data":"    main()\n"}
+,{"stream_name":"stderr","time":89.456923843,"data":"    ~~~~^^\n"}
+,{"stream_name":"stderr","time":89.456926115,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 283, in main\n"}
+,{"stream_name":"stderr","time":89.456928562,"data":"    model = train_lora(model, tokenizer, data)\n"}
+,{"stream_name":"stderr","time":89.456930954,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 205, in train_lora\n"}
+,{"stream_name":"stderr","time":89.456933407,"data":"    scaler.scale(loss).backward()\n"}
+,{"stream_name":"stderr","time":89.456935879,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n"}
+,{"stream_name":"stderr","time":89.456938156,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/_tensor.py\", line 631, in backward\n"}
+,{"stream_name":"stderr","time":89.456940645,"data":"    torch.autograd.backward(\n"}
+,{"stream_name":"stderr","time":89.456942945,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":89.456945272,"data":"        self, gradient, retain_graph, create_graph, inputs=inputs\n"}
+,{"stream_name":"stderr","time":89.456947638,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.456955362,"data":"    )\n"}
+,{"stream_name":"stderr","time":89.456957612,"data":"    ^\n"}
+,{"stream_name":"stderr","time":89.45695985,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/autograd/__init__.py\", line 381, in backward\n"}
+,{"stream_name":"stderr","time":89.456965217,"data":"    _engine_run_backward(\n"}
+,{"stream_name":"stderr","time":89.45696801,"data":"    ~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":89.456970259,"data":"        tensors,\n"}
+,{"stream_name":"stderr","time":89.45697252,"data":"        ^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.456974753,"data":"    ...\u003c5 lines\u003e...\n"}
+,{"stream_name":"stderr","time":89.456977136,"data":"        accumulate_grad=True,\n"}
+,{"stream_name":"stderr","time":89.456979434,"data":"        ^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.456981762,"data":"    )\n"}
+,{"stream_name":"stderr","time":89.456983978,"data":"    ^\n"}
+,{"stream_name":"stderr","time":89.456986267,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/autograd/graph.py\", line 869, in _engine_run_backward\n"}
+,{"stream_name":"stderr","time":89.456988745,"data":"    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":89.456991192,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.456993647,"data":"        t_outputs, *args, **kwargs\n"}
+,{"stream_name":"stderr","time":89.456995995,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":89.456998282,"data":"    )  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":89.457000634,"data":"    ^\n"}
+,{"stream_name":"stderr","time":89.457003241,"data":"torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.32 GiB. GPU 0 has a total capacity of 14.56 GiB of which 378.81 MiB is free. Including non-PyTorch memory, this process has 14.19 GiB memory in use. Of the allocated memory 11.54 GiB is allocated by PyTorch, and 2.51 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n"}
+,{"stream_name":"stderr","time":93.775103186,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":93.775684693,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":93.775697994,"data":"    import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)\n"}
+,{"stream_name":"stderr","time":93.775704467,"data":"                                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":93.775708532,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":93.775714129,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":93.775721427,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":93.775724349,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":93.775740792,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":93.775744541,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":93.775748646,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":93.775762235,"data":"Exception encountered at \"In [2]\":\n"}
+,{"stream_name":"stderr","time":93.775766014,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":93.775769412,"data":"CalledProcessError                        Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":93.775772769,"data":"/tmp/ipykernel_23/1644545297.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":93.775776236,"data":"     17 os.environ[\"REACTIONGRAPH_METHODS\"] = \"lora\"\n"}
+,{"stream_name":"stderr","time":93.775779801,"data":"     18 \n"}
+,{"stream_name":"stderr","time":93.775784773,"data":"---\u003e 19 subprocess.run([sys.executable, os.path.join(base, \"run_lora.py\")], check=True)\n"}
+,{"stream_name":"stderr","time":93.775791607,"data":"\n"}
+,{"stream_name":"stderr","time":93.775794529,"data":"/usr/lib/python3.13/subprocess.py in run(input, capture_output, timeout, check, *popenargs, **kwargs)\n"}
+,{"stream_name":"stderr","time":93.775797331,"data":"    576         retcode = process.poll()\n"}
+,{"stream_name":"stderr","time":93.77579958,"data":"    577         if check and retcode:\n"}
+,{"stream_name":"stderr","time":93.775801821,"data":"--\u003e 578             raise CalledProcessError(retcode, process.args,\n"}
+,{"stream_name":"stderr","time":93.775804156,"data":"    579                                      output=stdout, stderr=stderr)\n"}
+,{"stream_name":"stderr","time":93.775806532,"data":"    580     return CompletedProcess(process.args, retcode, stdout, stderr)\n"}
+,{"stream_name":"stderr","time":93.775808815,"data":"\n"}
+,{"stream_name":"stderr","time":93.775811074,"data":"CalledProcessError: Command '['/usr/bin/python3', '/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":93.775813559,"data":"\n"}
+,{"stream_name":"stderr","time":95.985861301,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":95.985890564,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":96.146798457,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":96.14682364,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":96.935472077,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":97.010815106,"data":"[NbConvertApp] Writing 9842 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":99.599316888,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":100.097809444,"data":"[NbConvertApp] Writing 284350 bytes to __results__.html\n"}
+]

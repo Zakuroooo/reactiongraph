@@ -28,7 +28,8 @@ OUT = Path(os.environ.get("REACTIONGRAPH_OUT", "/kaggle/working/outputs"))
 SEED = 42
 TRAIN_MINUTES = float(os.environ.get("REACTIONGRAPH_TRAIN_MINUTES", 0.2 if SMOKE else 45))
 MAX_EPOCHS = 2
-BATCH_TRAIN = 2 if SMOKE else 8
+BATCH_TRAIN = 2 if SMOKE else 4
+ACCUM_STEPS = 1 if SMOKE else 4  # effective batch = BATCH_TRAIN * ACCUM_STEPS
 BATCH_EVAL = 2 if SMOKE else 16
 LR = 2e-4
 MAX_NEW_TOKENS = 10 if SMOKE else 128
@@ -170,6 +171,8 @@ def collate(tokenizer, rows):
 
 def mean_loss(model, tokenizer, rows):
     model.eval()
+    if DEVICE == "cuda":
+        torch.cuda.empty_cache()
     total, batches = 0.0, 0
     with torch.no_grad():
         for i in range(0, len(rows), BATCH_EVAL):
@@ -187,6 +190,11 @@ def train_lora(model, tokenizer, data):
     print("trainable params", trainable, "of", total, flush=True)
     optimiser = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=LR)
     scaler = torch.amp.GradScaler("cuda", enabled=DEVICE == "cuda")
+    if DEVICE == "cuda":
+        # Recompute activations instead of storing them: the main saving that fits a T4.
+        model.gradient_checkpointing_enable()
+        model.enable_input_require_grads()
+        model.config.use_cache = False
     rows = list(data["train"])
     random.Random(SEED).shuffle(rows)
     history = [{"step": 0, "val_loss": round(mean_loss(model, tokenizer, data["val"]), 4)}]
@@ -195,19 +203,36 @@ def train_lora(model, tokenizer, data):
     best = history[0]["val_loss"]
     step = 0
     stopped = "epochs_done"
+    batch_size = BATCH_TRAIN
+    micro = 0
     for epoch in range(MAX_EPOCHS):
         model.train()
-        for i in range(0, len(rows), BATCH_TRAIN):
-            batch = collate(tokenizer, rows[i:i + BATCH_TRAIN])
-            with torch.autocast(DEVICE, dtype=torch.float16, enabled=DEVICE == "cuda"):
-                loss = model(**batch).loss
-            optimiser.zero_grad(set_to_none=True)
-            scaler.scale(loss).backward()
-            scaler.step(optimiser)
-            scaler.update()
-            step += 1
-            if step % 50 == 0:
-                print(f"  epoch {epoch} step {step} train loss {float(loss):.4f}", flush=True)
+        i = 0
+        while i < len(rows):
+            chunk = rows[i:i + batch_size]
+            try:
+                with torch.autocast(DEVICE, dtype=torch.float16, enabled=DEVICE == "cuda"):
+                    loss = model(**collate(tokenizer, chunk)).loss / ACCUM_STEPS
+                scaler.scale(loss).backward()
+            except torch.cuda.OutOfMemoryError:
+                # Drop the partial graph, shrink, and retry the same rows.
+                optimiser.zero_grad(set_to_none=True)
+                torch.cuda.empty_cache()
+                if batch_size == 1:
+                    raise
+                batch_size = max(1, batch_size // 2)
+                print("out of GPU memory; train batch size now", batch_size, flush=True)
+                continue
+            i += len(chunk)
+            micro += 1
+            if micro % ACCUM_STEPS == 0:
+                scaler.step(optimiser)
+                scaler.update()
+                optimiser.zero_grad(set_to_none=True)
+                step += 1
+                if step % 25 == 0:
+                    print(f"  epoch {epoch} step {step} rows {i} loss {float(loss) * ACCUM_STEPS:.4f}",
+                          flush=True)
             if time.time() > deadline:
                 stopped = "time_budget"
                 break
@@ -221,7 +246,10 @@ def train_lora(model, tokenizer, data):
         model.train()
         if stopped == "time_budget":
             break
-    RESULTS["lora"] = {"model": MODEL, "r": 16, "alpha": 32, "lr": LR, "batch_size": BATCH_TRAIN,
+    if DEVICE == "cuda":
+        model.config.use_cache = True  # generation needs the cache that training switched off
+    RESULTS["lora"] = {"model": MODEL, "r": 16, "alpha": 32, "lr": LR, "batch_size": batch_size,
+                       "accum_steps": ACCUM_STEPS,
                        "trainable_params": trainable, "total_params": total,
                        "trainable_pct": round(100 * trainable / total, 3),
                        "train_rows": len(rows), "steps": step, "stopped_because": stopped,
