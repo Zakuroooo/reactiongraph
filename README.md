@@ -177,11 +177,39 @@ Steps to run it: **`notebooks/KAGGLE-STEPS.md`**. The predictions are re-graded 
 `src/grade_lora.py`, which reads only the raw replies — so the reported number does not depend on
 trusting the notebook's own summary.
 
-### Results
+### Results (`results/lora.json`), 500 held-out reactions, Qwen2.5-1.5B-Instruct on one T4
 
-Not run yet. This section will hold the measured numbers, or state plainly that the run did not
-finish. **Expect weak numbers:** a 1.5B general model is not a chemistry model, and LoRA may not beat
-retrieval. That is still a real result.
+| Method | Exact product match | Valid SMILES | Seconds per answer |
+|---|---|---|---|
+| Base, asked cold | 0.0% [0.0, 0.76] | 45.0% | 0.31 |
+| Few-shot, 3 fixed examples | 0.0% [0.0, 0.76] | 63.2% | 0.44 |
+| Retrieval, 3 similar reactions | 0.8% [0.31, 2.04] | 66.0% | 0.42 |
+| **LoRA, trained then asked cold** | **9.0%** [6.79, 11.83] | **72.4%** | **0.22** |
+
+Exact match is RDKit canonical-SMILES equality, stereochemistry included. Intervals are Wilson 95%.
+
+**LoRA beat retrieval by about 11x, and the gap is real:** on the 45 questions where the two disagree,
+LoRA alone was right on 43 and retrieval alone on 2 (exact McNemar, p < 0.001). It also answers fastest,
+because it needs no examples in the prompt.
+
+Training: LoRA r=16, alpha=32, lr=2e-4, batch 4 with 4-step accumulation, **4,358,144 trainable
+parameters — 0.282% of 1,548,072,448**. 1,450 steps in a 45-minute budget, stopped by the clock, not by
+convergence. Validation loss fell **1.2471 → 0.4728 → 0.4585**.
+
+**Two honest readings of this:**
+
+- **Prompting barely works and fine-tuning helps a lot, but 9% is still a weak model.** 91% of the time
+  it is wrong. This is not a usable retrosynthesis tool; it is a measurement of how far a small general
+  model moves on a specialist task.
+- **Better context made the model more chemically fluent without making it more correct.** Valid SMILES
+  climbed 45% → 63% → 66% across the prompting methods while exact match stayed at or near zero. Only
+  training moved correctness. A model that produces plausible molecules is not a model that produces
+  right ones.
+
+The three prompting methods ran in kernel version 3 and LoRA in version 5, after fixing an old `torchao`
+in Kaggle's image and a GPU out-of-memory at batch 8. Same model, same 500 reactions, same grader.
+`src/grade_lora.py` re-graded every raw reply locally and **disagreed with the notebook on zero of 2,000
+predictions**.
 
 ## Limits
 

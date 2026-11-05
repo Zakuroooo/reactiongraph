@@ -75,9 +75,19 @@ def claims():
         ]
     if lora:
         # Only present after the Kaggle run has been re-graded locally by src/grade_lora.py.
+        # Written exactly as the results file holds them, so the README cannot round them away.
         for name, scores in lora["methods"].items():
-            out.append((f"{name} exact match", f"{scores['exact_pct']:.1f}%"))
-            out.append((f"{name} exact CI", f"[{scores['exact_ci95'][0]:.1f}, {scores['exact_ci95'][1]:.1f}]"))
+            out.append((f"{name} exact match", f"{scores['exact_pct']}%"))
+            out.append((f"{name} exact CI", f"[{scores['exact_ci95'][0]}, {scores['exact_ci95'][1]}]"))
+            out.append((f"{name} valid", f"{scores['valid_pct']}%"))
+        training = lora.get("lora_training", {})
+        if training:
+            out.append(("trainable params", f"{training['trainable_params']:,}"))
+            out.append(("total params", f"{training['total_params']:,}"))
+            out.append(("trainable pct", f"{training['trainable_pct']}%"))
+            out.append(("lora steps", f"{training['steps']:,}"))
+            for entry in training.get("val_loss_history", []):
+                out.append((f"val loss at step {entry['step']}", str(entry["val_loss"])))
     return out
 
 

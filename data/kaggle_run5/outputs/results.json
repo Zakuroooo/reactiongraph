@@ -1,0 +1,60 @@
+{
+  "settings": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "seed": 42,
+    "max_new_tokens": 128,
+    "train_minutes_budget": 45.0,
+    "smoke": false,
+    "device": "cuda",
+    "test_n": 500
+  },
+  "methods": {
+    "lora": {
+      "n": 500,
+      "valid": 362,
+      "exact": 45,
+      "valid_pct": 72.4,
+      "exact_pct": 9.0,
+      "valid_ci95": [
+        68.32,
+        76.14
+      ],
+      "exact_ci95": [
+        6.79,
+        11.83
+      ],
+      "seconds_per_answer": 0.2185
+    }
+  },
+  "lora": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "r": 16,
+    "alpha": 32,
+    "lr": 0.0002,
+    "batch_size": 4,
+    "accum_steps": 4,
+    "trainable_params": 4358144,
+    "total_params": 1548072448,
+    "trainable_pct": 0.282,
+    "train_rows": 20000,
+    "steps": 1450,
+    "stopped_because": "time_budget",
+    "val_loss_history": [
+      {
+        "step": 0,
+        "val_loss": 1.2471
+      },
+      {
+        "step": 1250,
+        "epoch": 0,
+        "val_loss": 0.4728
+      },
+      {
+        "step": 1450,
+        "epoch": 1,
+        "val_loss": 0.4585
+      }
+    ]
+  },
+  "pairwise": {}
+}
