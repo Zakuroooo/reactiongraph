@@ -11,7 +11,11 @@ RDLogger.DisableLog("rdApp.*")
 
 
 def extract_smiles(text):
-    """Take the first token of the model's reply, which is where we told it to put the SMILES."""
+    """Take the first token of the model's reply, which is where we told it to put the SMILES.
+
+    Limitation: a prose refusal starting with "I" parses, because I is iodine. So valid% is an
+    upper bound on how often the model really answered. Exact match is unaffected.
+    """
     text = text.strip().strip("`").strip()
     if not text:
         return ""

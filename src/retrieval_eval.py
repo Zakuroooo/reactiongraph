@@ -20,6 +20,7 @@ from src.vectors import VectorIndex, ranked_answers
 N_QUESTIONS = 200
 MAX_REAGENT_DEGREE = 50  # above this a "reagent" is usually a common solvent or base
 KS = [1, 5, 10, 20, 50]
+MAX_K = 50  # the deepest k we score, so each method retrieves exactly this many answers
 SEARCH_DEPTH = 200  # how many reactions the vector search reads answers from
 SEED = 7
 OUT = Path("results/retrieval.json")
@@ -73,7 +74,7 @@ def score(rows, question_type, ks=KS, seed=SEED):
     return out
 
 
-def run_graph(driver, questions, max_k=max(KS)):
+def run_graph(driver, questions, max_k=MAX_K):
     rows = []
     for q in questions:
         start = time.perf_counter()
@@ -87,7 +88,7 @@ def run_graph(driver, questions, max_k=max(KS)):
     return rows
 
 
-def run_vector(index, questions, max_k=max(KS)):
+def run_vector(index, questions, max_k=MAX_K):
     rows = []
     for q in questions:
         start = time.perf_counter()

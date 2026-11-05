@@ -1,0 +1,8 @@
+rdkit==2026.9.1
+mcp>=2.3.0
+neo4j==6.4.1
+numpy>=2.0
+scipy>=1.14
+pytest>=8.0
+py7zr>=1.0
+ruff>=0.6

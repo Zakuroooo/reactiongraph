@@ -97,7 +97,8 @@ def generate(model, tokenizer, chats, batch_size=BATCH_EVAL):
             print("out of GPU memory; batch size now", batch_size, flush=True)
             continue
         new_tokens = output[:, batch["input_ids"].shape[1]:]
-        for j, reply in zip(chunk, tokenizer.batch_decode(new_tokens, skip_special_tokens=True)):
+        decoded = tokenizer.batch_decode(new_tokens, skip_special_tokens=True)
+        for j, reply in zip(chunk, decoded, strict=True):
             replies[j] = reply
         i += len(chunk)
         print(f"  {i}/{len(order)}", end="\r", flush=True)
@@ -112,7 +113,7 @@ def run_method(name, model, tokenizer, test, chats):
     seconds = time.time() - start
     graded = []
     with (OUT / f"predictions_{name}.jsonl").open("w") as f:
-        for row, reply in zip(test, replies):
+        for row, reply in zip(test, replies, strict=True):
             valid, exact = grade(reply, row["product"])
             graded.append((row["id"], valid, exact))
             f.write(json.dumps({"id": row["id"], "product": row["product"], "reply": reply,
