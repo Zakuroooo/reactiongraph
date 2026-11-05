@@ -70,7 +70,9 @@ def messages(row, examples=()):
 
 
 def build_model(tokenizer):
-    model = AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.float16).to(DEVICE)
+    # float16 is fast on a GPU but very slow on a CPU, so the local smoke test stays in float32.
+    dtype = torch.float16 if DEVICE == "cuda" else torch.float32
+    model = AutoModelForCausalLM.from_pretrained(MODEL, dtype=dtype).to(DEVICE)
     model.config.pad_token_id = tokenizer.pad_token_id
     return model
 
