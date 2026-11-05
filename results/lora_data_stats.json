@@ -1,0 +1,20 @@
+{
+  "usable_reactions": 47872,
+  "available_after_split": {
+    "train": 44490,
+    "val": 925,
+    "test": 2268
+  },
+  "train": 20000,
+  "val": 200,
+  "test": 500,
+  "seed": 42,
+  "patents_in_both_train_and_test": 0,
+  "test_products_also_in_train": 2,
+  "test_products_also_in_train_pct": 0.4,
+  "nearest_neighbour_copy_exact_pct": 0.0,
+  "nearest_neighbour_copy_ci95": [
+    0.0,
+    0.8
+  ]
+}

@@ -1,0 +1,9 @@
+.venv/
+data/raw/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.env
+*.pyc
+.DS_Store
+results/_scratch/

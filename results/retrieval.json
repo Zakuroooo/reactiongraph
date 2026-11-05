@@ -1,0 +1,268 @@
+{
+  "settings": {
+    "n_per_type": 200,
+    "max_reagent_degree_two_hop": 50,
+    "vector_search_depth": 200,
+    "seed": 7,
+    "reactions": 48524
+  },
+  "answer_set_size": {
+    "one_hop": {
+      "median": 2.0,
+      "max": 8
+    },
+    "two_hop": {
+      "median": 18.0,
+      "max": 78
+    }
+  },
+  "methods": {
+    "graph": {
+      "one_hop": {
+        "recall@1": {
+          "mean": 0.4821,
+          "ci95": [
+            0.4471,
+            0.5185
+          ]
+        },
+        "recall@5": {
+          "mean": 0.9942,
+          "ci95": [
+            0.9882,
+            0.9986
+          ]
+        },
+        "recall@10": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "recall@20": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "recall@50": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "n": 200,
+        "median_latency_ms": 1.19,
+        "type": "one_hop"
+      },
+      "two_hop": {
+        "recall@1": {
+          "mean": 0.1564,
+          "ci95": [
+            0.1261,
+            0.1901
+          ]
+        },
+        "recall@5": {
+          "mean": 0.444,
+          "ci95": [
+            0.3954,
+            0.4942
+          ]
+        },
+        "recall@10": {
+          "mean": 0.6132,
+          "ci95": [
+            0.5686,
+            0.6585
+          ]
+        },
+        "recall@20": {
+          "mean": 0.8122,
+          "ci95": [
+            0.7792,
+            0.8446
+          ]
+        },
+        "recall@50": {
+          "mean": 0.9912,
+          "ci95": [
+            0.9839,
+            0.9972
+          ]
+        },
+        "n": 200,
+        "median_latency_ms": 1.31,
+        "type": "two_hop"
+      }
+    },
+    "vector_product": {
+      "one_hop": {
+        "recall@1": {
+          "mean": 0.4821,
+          "ci95": [
+            0.4471,
+            0.5185
+          ]
+        },
+        "recall@5": {
+          "mean": 0.9942,
+          "ci95": [
+            0.9882,
+            0.9986
+          ]
+        },
+        "recall@10": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "recall@20": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "recall@50": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "n": 200,
+        "median_latency_ms": 10.35,
+        "type": "one_hop"
+      },
+      "two_hop": {
+        "recall@1": {
+          "mean": 0.0189,
+          "ci95": [
+            0.0092,
+            0.0305
+          ]
+        },
+        "recall@5": {
+          "mean": 0.0388,
+          "ci95": [
+            0.0204,
+            0.0628
+          ]
+        },
+        "recall@10": {
+          "mean": 0.0486,
+          "ci95": [
+            0.0271,
+            0.0744
+          ]
+        },
+        "recall@20": {
+          "mean": 0.0534,
+          "ci95": [
+            0.0301,
+            0.0805
+          ]
+        },
+        "recall@50": {
+          "mean": 0.0606,
+          "ci95": [
+            0.0379,
+            0.0867
+          ]
+        },
+        "n": 200,
+        "median_latency_ms": 9.79,
+        "type": "two_hop"
+      }
+    },
+    "vector_reaction": {
+      "one_hop": {
+        "recall@1": {
+          "mean": 0.382,
+          "ci95": [
+            0.341,
+            0.4225
+          ]
+        },
+        "recall@5": {
+          "mean": 0.8852,
+          "ci95": [
+            0.8453,
+            0.9236
+          ]
+        },
+        "recall@10": {
+          "mean": 0.9341,
+          "ci95": [
+            0.9012,
+            0.9643
+          ]
+        },
+        "recall@20": {
+          "mean": 0.949,
+          "ci95": [
+            0.9195,
+            0.9745
+          ]
+        },
+        "recall@50": {
+          "mean": 0.972,
+          "ci95": [
+            0.952,
+            0.99
+          ]
+        },
+        "n": 200,
+        "median_latency_ms": 13.65,
+        "type": "one_hop"
+      },
+      "two_hop": {
+        "recall@1": {
+          "mean": 0.0107,
+          "ci95": [
+            0.0035,
+            0.0203
+          ]
+        },
+        "recall@5": {
+          "mean": 0.0212,
+          "ci95": [
+            0.0086,
+            0.038
+          ]
+        },
+        "recall@10": {
+          "mean": 0.0252,
+          "ci95": [
+            0.011,
+            0.0436
+          ]
+        },
+        "recall@20": {
+          "mean": 0.03,
+          "ci95": [
+            0.0144,
+            0.0485
+          ]
+        },
+        "recall@50": {
+          "mean": 0.0406,
+          "ci95": [
+            0.023,
+            0.0611
+          ]
+        },
+        "n": 200,
+        "median_latency_ms": 12.8,
+        "type": "two_hop"
+      }
+    }
+  },
+  "reagents_above_degree_cap": 167
+}

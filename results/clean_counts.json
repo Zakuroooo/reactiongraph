@@ -1,0 +1,20 @@
+{
+  "source_rows_total": 1808937,
+  "sample_in": 50000,
+  "seed": 42,
+  "dropped_total": 30,
+  "dropped_by_reason": {
+    "unparseable_molecule": 29,
+    "product_equals_reactant": 1
+  },
+  "parsed": 49970,
+  "duplicate_reactions_merged": 1446,
+  "reactions_out": 48524,
+  "molecule_mentions": 254898,
+  "distinct_spellings_atom_maps_removed": 112184,
+  "unique_molecules_canonical": 100444,
+  "spellings_merged": 11740,
+  "molecules_with_2plus_spellings": 6720,
+  "unmapped_reactants_moved_to_reagents": 51549,
+  "patents": 26609
+}
