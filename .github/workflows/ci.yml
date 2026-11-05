@@ -8,6 +8,27 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    # A real Neo4j, so the MCP tool tests actually run here instead of skipping.
+    services:
+      neo4j:
+        image: neo4j:5
+        env:
+          NEO4J_AUTH: neo4j/reactiongraph
+        ports:
+          - 7687:7687
+          - 7474:7474
+        options: >-
+          --health-cmd "wget -qO- http://localhost:7474 || exit 1"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 20
+
+    env:
+      NEO4J_URI: bolt://localhost:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: reactiongraph
+
     steps:
       - uses: actions/checkout@v4
 
@@ -20,12 +41,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Show versions
+        run: python -c "import sys, rdkit, neo4j, mcp; print(sys.version); print('rdkit', rdkit.__version__, 'neo4j', neo4j.__version__)"
+
+      - name: Import every module
+        run: python -c "import src.clean, src.graph, src.vectors, src.grading, src.grade_lora, src.mcp_server; print('imports ok')"
+
       - name: Lint
         run: ruff check src tests notebooks
 
-      - name: Tests
-        # The Neo4j tool tests skip themselves when no database is reachable.
-        run: pytest -q
+      - name: Cleaning, grader and statistics tests
+        run: pytest tests/test_clean.py -v
+
+      - name: MCP tool tests against Neo4j
+        run: pytest tests/test_mcp_tools.py -v
 
       - name: Check every reported number comes from a saved results file
         run: python -m src.check_results
