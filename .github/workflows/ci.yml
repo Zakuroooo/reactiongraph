@@ -51,10 +51,21 @@ jobs:
         run: ruff check src tests notebooks
 
       - name: Cleaning, grader and statistics tests
-        run: pytest tests/test_clean.py -v
+        run: |
+          set -o pipefail
+          pytest tests/test_clean.py -v 2>&1 | tee -a /tmp/pytest.log
 
       - name: MCP tool tests against Neo4j
-        run: pytest tests/test_mcp_tools.py -v
+        run: |
+          set -o pipefail
+          pytest tests/test_mcp_tools.py tests/test_mcp_protocol.py -v 2>&1 | tee -a /tmp/pytest.log
+
+      - name: Publish the test output to the run summary
+        if: always()
+        run: |
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          tail -c 60000 /tmp/pytest.log >> "$GITHUB_STEP_SUMMARY" || echo "no pytest output" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Check every reported number comes from a saved results file
         run: python -m src.check_results
