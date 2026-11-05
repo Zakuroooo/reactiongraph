@@ -134,12 +134,17 @@ python -m src.mcp_server
 
 ## Tests
 
-**30 tests, `pytest -q`.** They cover the cleaning decisions (atom-map handling, salt fragments, each
+**33 tests, `pytest -q`.** They cover the cleaning decisions (atom-map handling, salt fragments, each
 drop reason), the grader (different spellings of the right product count as correct, stereochemistry
 does not), the statistics, and all four MCP tools against a small graph loaded for the test only.
 
-Every tool is checked against four kinds of bad input. GitHub Actions runs lint and the tests on each
-push; the Neo4j tests skip themselves when no database is reachable, so CI stays green without one.
+Three of them are end-to-end: they start the server over stdio and talk to it as an agent would —
+list the tools, read their schemas, call one, and check that a bad SMILES comes back as a readable
+error. Every tool is also checked against four kinds of bad input, and `limit` is clamped, not trusted.
+
+GitHub Actions runs lint and the whole suite on every push, with **Neo4j as a service container**, so
+the graph tests really execute there rather than skipping. Run locally they skip themselves when no
+database is reachable.
 
 **One honest limitation the tests document:** the grader takes the model's first token, and a refusal
 starting with "I" parses as iodine. So "valid SMILES %" is an upper bound. Exact match — the number
@@ -201,6 +206,7 @@ src/mcp_server.py      the four MCP tools
 src/grading.py         the RDKit grader, Wilson CI, exact McNemar
 src/grade_lora.py      re-grades the Kaggle predictions locally
 src/check_results.py   fails if a number in this README is not in results/
+tests/                 33 tests: cleaning, grading, statistics, MCP tools, MCP over stdio
 notebooks/run_lora.py  the GPU experiment
 results/               every number quoted anywhere comes from these files
 ```
