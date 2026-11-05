@@ -27,6 +27,7 @@ def claims():
     graph = load("graph_counts.json")
     retrieval = load("retrieval.json")
     lora_data = load("lora_data_stats.json")
+    lora = load("lora.json")
     out = []
     if clean:
         out += [
@@ -72,6 +73,11 @@ def claims():
             ("test products seen in train", str(lora_data["test_products_also_in_train"])),
             ("nearest-neighbour copy", f"{lora_data['nearest_neighbour_copy_exact_pct']:.1f}%"),
         ]
+    if lora:
+        # Only present after the Kaggle run has been re-graded locally by src/grade_lora.py.
+        for name, scores in lora["methods"].items():
+            out.append((f"{name} exact match", f"{scores['exact_pct']:.1f}%"))
+            out.append((f"{name} exact CI", f"[{scores['exact_ci95'][0]:.1f}, {scores['exact_ci95'][1]:.1f}]"))
     return out
 
 
