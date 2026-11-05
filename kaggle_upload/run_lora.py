@@ -43,8 +43,18 @@ def save():
 
 
 def load_data():
-    with gzip.open(DATA_PATH, "rt") as f:
+    """Read the split. Kaggle decompresses .gz on upload, so accept either form."""
+    path = DATA_PATH
+    if not path.exists():
+        for candidate in sorted(path.parent.glob("lora_data.json*")):
+            path = candidate
+            break
+        else:
+            raise SystemExit(f"no lora_data.json* in {path.parent}: {list(path.parent.iterdir())}")
+    opener = gzip.open if path.suffix == ".gz" else open
+    with opener(path, "rt") as f:
         data = json.load(f)
+    print("data file", path, flush=True)
     if SMOKE:
         data["train"], data["val"], data["test"] = data["train"][:16], data["val"][:4], data["test"][:8]
     print("data", {k: len(v) for k, v in data.items()}, flush=True)

@@ -1,0 +1,55 @@
+[{"stream_name":"stderr","time":5.98991853,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":5.989973485,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":6.801441366,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.801466423,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.801470971,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.801475468,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.367051471,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.367086179,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.3670916,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.367095397,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":13.735221077,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":13.73586322,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":13.735877025,"data":"    import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)\n"}
+,{"stream_name":"stderr","time":13.735882909,"data":"                                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":13.735887187,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":13.735891488,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":13.7358953,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":13.735899559,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":13.735903842,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":13.735907497,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":13.735911455,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":13.735914915,"data":"Exception encountered at \"In [2]\":\n"}
+,{"stream_name":"stderr","time":13.735918385,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":13.735921797,"data":"FileNotFoundError                         Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":13.735925202,"data":"/tmp/ipykernel_23/3502064061.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":13.735928728,"data":"      3 os.environ[\"REACTIONGRAPH_OUT\"] = \"/kaggle/working/outputs\"\n"}
+,{"stream_name":"stderr","time":13.73594545,"data":"      4 for f in (\"grading.py\", \"run_lora.py\"):\n"}
+,{"stream_name":"stderr","time":13.735948484,"data":"----\u003e 5     shutil.copy(f\"/kaggle/input/reactiongraph/{f}\", f\"/kaggle/working/{f}\")\n"}
+,{"stream_name":"stderr","time":13.735951106,"data":"      6 subprocess.run([sys.executable, \"/kaggle/working/run_lora.py\"], check=True)\n"}
+,{"stream_name":"stderr","time":13.735953527,"data":"\n"}
+,{"stream_name":"stderr","time":13.735955682,"data":"/usr/lib/python3.13/shutil.py in copy(src, dst, follow_symlinks)\n"}
+,{"stream_name":"stderr","time":13.735957942,"data":"    426     if os.path.isdir(dst):\n"}
+,{"stream_name":"stderr","time":13.735960238,"data":"    427         dst = os.path.join(dst, os.path.basename(src))\n"}
+,{"stream_name":"stderr","time":13.735962534,"data":"--\u003e 428     copyfile(src, dst, follow_symlinks=follow_symlinks)\n"}
+,{"stream_name":"stderr","time":13.735964872,"data":"    429     copymode(src, dst, follow_symlinks=follow_symlinks)\n"}
+,{"stream_name":"stderr","time":13.73596715,"data":"    430     return dst\n"}
+,{"stream_name":"stderr","time":13.735969444,"data":"\n"}
+,{"stream_name":"stderr","time":13.735971632,"data":"/usr/lib/python3.13/shutil.py in copyfile(src, dst, follow_symlinks)\n"}
+,{"stream_name":"stderr","time":13.735973925,"data":"    258         os.symlink(os.readlink(src), dst)\n"}
+,{"stream_name":"stderr","time":13.73597619,"data":"    259     else:\n"}
+,{"stream_name":"stderr","time":13.735978453,"data":"--\u003e 260         with open(src, 'rb') as fsrc:\n"}
+,{"stream_name":"stderr","time":13.735980787,"data":"    261             try:\n"}
+,{"stream_name":"stderr","time":13.73598299,"data":"    262                 with open(dst, 'wb') as fdst:\n"}
+,{"stream_name":"stderr","time":13.735985276,"data":"\n"}
+,{"stream_name":"stderr","time":13.735988025,"data":"FileNotFoundError: [Errno 2] No such file or directory: '/kaggle/input/reactiongraph/grading.py'\n"}
+,{"stream_name":"stderr","time":13.735990392,"data":"\n"}
+,{"stream_name":"stderr","time":15.798585953,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":15.798612052,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":15.948360372,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":15.948380403,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":16.670696578,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":16.740042777,"data":"[NbConvertApp] Writing 7811 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":19.140531628,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":19.608067597,"data":"[NbConvertApp] Writing 280371 bytes to __results__.html\n"}
+]

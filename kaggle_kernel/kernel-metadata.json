@@ -1,0 +1,13 @@
+{
+  "id": "pranaysarkar04/reactiongraph-lora",
+  "title": "reactiongraph-lora",
+  "code_file": "reactiongraph_lora.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["pranaysarkar04/reactiongraph"],
+  "competition_sources": [],
+  "kernel_sources": []
+}
