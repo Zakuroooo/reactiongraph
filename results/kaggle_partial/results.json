@@ -1,0 +1,61 @@
+{
+  "settings": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "seed": 42,
+    "max_new_tokens": 128,
+    "train_minutes_budget": 45.0,
+    "smoke": false,
+    "device": "cuda",
+    "test_n": 500
+  },
+  "methods": {
+    "base": {
+      "n": 500,
+      "valid": 225,
+      "exact": 0,
+      "valid_pct": 45.0,
+      "exact_pct": 0.0,
+      "valid_ci95": [
+        40.69,
+        49.38
+      ],
+      "exact_ci95": [
+        0.0,
+        0.76
+      ],
+      "seconds_per_answer": 0.307
+    },
+    "few_shot": {
+      "n": 500,
+      "valid": 316,
+      "exact": 0,
+      "valid_pct": 63.2,
+      "exact_pct": 0.0,
+      "valid_ci95": [
+        58.89,
+        67.31
+      ],
+      "exact_ci95": [
+        0.0,
+        0.76
+      ],
+      "seconds_per_answer": 0.4359
+    },
+    "retrieval": {
+      "n": 500,
+      "valid": 330,
+      "exact": 4,
+      "valid_pct": 66.0,
+      "exact_pct": 0.8,
+      "valid_ci95": [
+        61.74,
+        70.02
+      ],
+      "exact_ci95": [
+        0.31,
+        2.04
+      ],
+      "seconds_per_answer": 0.4214
+    }
+  }
+}

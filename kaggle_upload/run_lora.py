@@ -33,6 +33,9 @@ BATCH_EVAL = 2 if SMOKE else 16
 LR = 2e-4
 MAX_NEW_TOKENS = 10 if SMOKE else 128
 N_EXAMPLES = 3
+# Which methods to run. Lets a re-run do only the stage that failed, reusing the saved
+# predictions of the others: they answered the same test set with the same model and grader.
+METHODS = [m for m in os.environ.get("REACTIONGRAPH_METHODS", "base,few_shot,retrieval,lora").split(",") if m]
 
 RESULTS = {"settings": {"model": MODEL, "seed": SEED, "max_new_tokens": MAX_NEW_TOKENS,
                         "train_minutes_budget": TRAIN_MINUTES, "smoke": SMOKE}, "methods": {}}
@@ -253,20 +256,32 @@ def main():
     random.seed(SEED)
     torch.manual_seed(SEED)
 
+    if "lora" in METHODS:
+        # peft pulls in transformers' quantization helpers, which refuse an old torchao.
+        # Check it now rather than after half an hour of prompting runs.
+        from peft import get_peft_model as _check  # noqa: F401
+        from transformers.utils.quantization_config import QuantizationMethod  # noqa: F401
+        print("peft import ok", flush=True)
+
     data = load_data()
     test = data["test"]
     RESULTS["settings"]["test_n"] = len(test)
     tokenizer = AutoTokenizer.from_pretrained(MODEL)
     model = build_model(tokenizer)
 
+    print("methods to run:", METHODS, flush=True)
     exact = {}
-    exact["base"] = run_method("base", model, tokenizer, test, [messages(r) for r in test])
-    exact["few_shot"] = run_method("few_shot", model, tokenizer, test,
-                                   [messages(r, data["few_shot"]) for r in test])
-    exact["retrieval"] = run_method("retrieval", model, tokenizer, test,
-                                    [messages(r, r["neighbours"][:N_EXAMPLES]) for r in test])
-    model = train_lora(model, tokenizer, data)
-    exact["lora"] = run_method("lora", model, tokenizer, test, [messages(r) for r in test])
+    if "base" in METHODS:
+        exact["base"] = run_method("base", model, tokenizer, test, [messages(r) for r in test])
+    if "few_shot" in METHODS:
+        exact["few_shot"] = run_method("few_shot", model, tokenizer, test,
+                                       [messages(r, data["few_shot"]) for r in test])
+    if "retrieval" in METHODS:
+        exact["retrieval"] = run_method("retrieval", model, tokenizer, test,
+                                        [messages(r, r["neighbours"][:N_EXAMPLES]) for r in test])
+    if "lora" in METHODS:
+        model = train_lora(model, tokenizer, data)
+        exact["lora"] = run_method("lora", model, tokenizer, test, [messages(r) for r in test])
 
     RESULTS["pairwise"] = compare(exact)
     save()

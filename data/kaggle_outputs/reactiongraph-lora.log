@@ -1,55 +1,216 @@
-[{"stream_name":"stderr","time":5.98991853,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
-,{"stream_name":"stderr","time":5.989973485,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
-,{"stream_name":"stderr","time":6.801441366,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
-,{"stream_name":"stderr","time":6.801466423,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
-,{"stream_name":"stderr","time":6.801470971,"data":"0.00s - to python to disable frozen modules.\n"}
-,{"stream_name":"stderr","time":6.801475468,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
-,{"stream_name":"stderr","time":7.367051471,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
-,{"stream_name":"stderr","time":7.367086179,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
-,{"stream_name":"stderr","time":7.3670916,"data":"0.00s - to python to disable frozen modules.\n"}
-,{"stream_name":"stderr","time":7.367095397,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
-,{"stream_name":"stderr","time":13.735221077,"data":"Traceback (most recent call last):\n"}
-,{"stream_name":"stderr","time":13.73586322,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
-,{"stream_name":"stderr","time":13.735877025,"data":"    import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)\n"}
-,{"stream_name":"stderr","time":13.735882909,"data":"                                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":13.735887187,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
-,{"stream_name":"stderr","time":13.735891488,"data":"    raise_for_execution_errors(nb, output_path)\n"}
-,{"stream_name":"stderr","time":13.7358953,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":13.735899559,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
-,{"stream_name":"stderr","time":13.735903842,"data":"    raise error\n"}
-,{"stream_name":"stderr","time":13.735907497,"data":"papermill.exceptions.PapermillExecutionError: \n"}
-,{"stream_name":"stderr","time":13.735911455,"data":"---------------------------------------------------------------------------\n"}
-,{"stream_name":"stderr","time":13.735914915,"data":"Exception encountered at \"In [2]\":\n"}
-,{"stream_name":"stderr","time":13.735918385,"data":"---------------------------------------------------------------------------\n"}
-,{"stream_name":"stderr","time":13.735921797,"data":"FileNotFoundError                         Traceback (most recent call last)\n"}
-,{"stream_name":"stderr","time":13.735925202,"data":"/tmp/ipykernel_23/3502064061.py in \u003ccell line: 0\u003e()\n"}
-,{"stream_name":"stderr","time":13.735928728,"data":"      3 os.environ[\"REACTIONGRAPH_OUT\"] = \"/kaggle/working/outputs\"\n"}
-,{"stream_name":"stderr","time":13.73594545,"data":"      4 for f in (\"grading.py\", \"run_lora.py\"):\n"}
-,{"stream_name":"stderr","time":13.735948484,"data":"----\u003e 5     shutil.copy(f\"/kaggle/input/reactiongraph/{f}\", f\"/kaggle/working/{f}\")\n"}
-,{"stream_name":"stderr","time":13.735951106,"data":"      6 subprocess.run([sys.executable, \"/kaggle/working/run_lora.py\"], check=True)\n"}
-,{"stream_name":"stderr","time":13.735953527,"data":"\n"}
-,{"stream_name":"stderr","time":13.735955682,"data":"/usr/lib/python3.13/shutil.py in copy(src, dst, follow_symlinks)\n"}
-,{"stream_name":"stderr","time":13.735957942,"data":"    426     if os.path.isdir(dst):\n"}
-,{"stream_name":"stderr","time":13.735960238,"data":"    427         dst = os.path.join(dst, os.path.basename(src))\n"}
-,{"stream_name":"stderr","time":13.735962534,"data":"--\u003e 428     copyfile(src, dst, follow_symlinks=follow_symlinks)\n"}
-,{"stream_name":"stderr","time":13.735964872,"data":"    429     copymode(src, dst, follow_symlinks=follow_symlinks)\n"}
-,{"stream_name":"stderr","time":13.73596715,"data":"    430     return dst\n"}
-,{"stream_name":"stderr","time":13.735969444,"data":"\n"}
-,{"stream_name":"stderr","time":13.735971632,"data":"/usr/lib/python3.13/shutil.py in copyfile(src, dst, follow_symlinks)\n"}
-,{"stream_name":"stderr","time":13.735973925,"data":"    258         os.symlink(os.readlink(src), dst)\n"}
-,{"stream_name":"stderr","time":13.73597619,"data":"    259     else:\n"}
-,{"stream_name":"stderr","time":13.735978453,"data":"--\u003e 260         with open(src, 'rb') as fsrc:\n"}
-,{"stream_name":"stderr","time":13.735980787,"data":"    261             try:\n"}
-,{"stream_name":"stderr","time":13.73598299,"data":"    262                 with open(dst, 'wb') as fdst:\n"}
-,{"stream_name":"stderr","time":13.735985276,"data":"\n"}
-,{"stream_name":"stderr","time":13.735988025,"data":"FileNotFoundError: [Errno 2] No such file or directory: '/kaggle/input/reactiongraph/grading.py'\n"}
-,{"stream_name":"stderr","time":13.735990392,"data":"\n"}
-,{"stream_name":"stderr","time":15.798585953,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
-,{"stream_name":"stderr","time":15.798612052,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
-,{"stream_name":"stderr","time":15.948360372,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
-,{"stream_name":"stderr","time":15.948380403,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
-,{"stream_name":"stderr","time":16.670696578,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
-,{"stream_name":"stderr","time":16.740042777,"data":"[NbConvertApp] Writing 7811 bytes to __notebook__.ipynb\n"}
-,{"stream_name":"stderr","time":19.140531628,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
-,{"stream_name":"stderr","time":19.608067597,"data":"[NbConvertApp] Writing 280371 bytes to __results__.html\n"}
+[{"stream_name":"stderr","time":7.426018533,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.426060848,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.426065051,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.426067763,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.017508049,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.017537125,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.017541597,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.01754523,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":15.362535634,"data":"under /kaggle/input: ['datasets']\n"}
+,{"stream_name":"stdout","time":15.826487102,"data":"using /kaggle/input/datasets/pranaysarkar04/reactiongraph/lora_data.json\n"}
+,{"stream_name":"stdout","time":15.826514582,"data":"alongside it: ['grading.py', 'lora_data.json', 'run_lora.py']\n"}
+,{"stream_name":"stdout","time":47.380784613,"data":"device cuda Tesla T4\n"}
+,{"stream_name":"stdout","time":47.584190776,"data":"device cuda Tesla T4\n"}
+,{"stream_name":"stdout","time":47.782731825,"data":"data file /kaggle/input/datasets/pranaysarkar04/reactiongraph/lora_data.json\n"}
+,{"stream_name":"stdout","time":47.782761457,"data":"data {'train': 20000, 'val': 200, 'test': 500, 'few_shot': 3}\n"}
+,{"stream_name":"stdout","time":47.985003447,"data":"data file /kaggle/input/datasets/pranaysarkar04/reactiongraph/lora_data.json\n"}
+,{"stream_name":"stdout","time":47.985029489,"data":"data {'train': 20000, 'val': 200, 'test': 500, 'few_shot': 3}\n"}
+,{"stream_name":"stderr","time":48.760934202,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":48.963147594,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":48.963170949,"data":"\n"}
+,{"stream_name":"stderr","time":48.963177101,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":70.739377516,"data":"\rLoading weights:   0%|          | 0/338 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 0/338 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":71.401376174,"data":"\rLoading weights:   0%|          | 0/338 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/338 [00:00\u003c03:43,  1.50it/s]\rLoading weights:  40%|███▉      | 135/338 [00:00\u003c00:00, 235.06it/s]\rLoading weights:   0%|          | 1/338 [00:00\u003c03:43,  1.50it/s]\rLoading weights:  40%|███▉      | 135/338 [00:00\u003c00:00, 235.06it/s]\n"}
+,{"stream_name":"stderr","time":71.785505409,"data":"\rLoading weights:   0%|          | 1/338 [00:00\u003c03:43,  1.50it/s]\rLoading weights:  40%|███▉      | 135/338 [00:00\u003c00:00, 235.06it/s]\rLoading weights:  62%|██████▏   | 209/338 [00:01\u003c00:00, 248.60it/s]\rLoading weights:  77%|███████▋  | 261/338 [00:01\u003c00:00, 255.70it/s]\rLoading weights:  62%|██████▏   | 209/338 [00:01\u003c00:00, 248.60it/s]\rLoading weights:  77%|███████▋  | 261/338 [00:01\u003c00:00, 255.70it/s]\n"}
+,{"stream_name":"stderr","time":72.009379463,"data":"\rLoading weights:  62%|██████▏   | 209/338 [00:01\u003c00:00, 248.60it/s]\rLoading weights:  77%|███████▋  | 261/338 [00:01\u003c00:00, 255.70it/s]\rLoading weights:  90%|████████▉ | 304/338 [00:01\u003c00:00, 258.82it/s]\rLoading weights: 100%|██████████| 338/338 [00:01\u003c00:00, 228.28it/s]\n"}
+,{"stream_name":"stderr","time":72.132809549,"data":"\rLoading weights:  90%|████████▉ | 304/338 [00:01\u003c00:00, 258.82it/s]\rLoading weights: 100%|██████████| 338/338 [00:01\u003c00:00, 228.28it/s]\n"}
+,{"stream_name":"stderr","time":72.132837484,"data":"\n"}
+,{"stream_name":"stderr","time":72.132842834,"data":"\rLoading weights:  90%|████████▉ | 304/338 [00:01\u003c00:00, 258.82it/s]\rLoading weights: 100%|██████████| 338/338 [00:01\u003c00:00, 228.28it/s]\n"}
+,{"stream_name":"stdout","time":226.911339179,"data":"  16/500\r  16/500\r  32/500\r  32/500\r  48/500\r  48/500\r  64/500\r  64/500\r  80/500\r  80/500\r  96/500\r  96/500\r  112/500\r  112/500\r  128/500\r  128/500\r  144/500\r  144/500\r  160/500\r  160/500\r  176/500\r  176/500\r  192/500\r  192/500\r  208/500\r  208/500\r  224/500\r  224/500\r  240/500\r  240/500\r  256/500\r  256/500\r  272/500\r  272/500\r  288/500\r  288/500\r  304/500\r  304/500\r  320/500\r  320/500\r  336/500\r  336/500\r  352/500\r  352/500\r  368/500\r  368/500\r  384/500\r  384/500\r  400/500\r  400/500\r  416/500\r  416/500\r  432/500\r  432/500\r  448/500\r  448/500\r  464/500\r  464/500\r  480/500\r  480/500\r  496/500\r  496/500\r  500/500\r  500/500\rbase {'n': 500, 'valid': 225, 'exact': 0, 'valid_pct': 45.0, 'exact_pct': 0.0, 'valid_ci95': [40.69, 49.38], 'exact_ci95': [0.0, 0.76], 'seconds_per_answer': 0.307}\n"}
+,{"stream_name":"stdout","time":226.911393847,"data":"  example reply: 'COCl2' | true product: COc1ncc(Cl)c2c1c(-c1ccc(C(=O)O)cc1)nn2-c1c(F)cccc1F\n"}
+,{"stream_name":"stdout","time":227.114265978,"data":"base {'n': 500, 'valid': 225, 'exact': 0, 'valid_pct': 45.0, 'exact_pct': 0.0, 'valid_ci95': [40.69, 49.38], 'exact_ci95': [0.0, 0.76], 'seconds_per_answer': 0.307}\n"}
+,{"stream_name":"stdout","time":227.114294939,"data":"  example reply: 'COCl2' | true product: COc1ncc(Cl)c2c1c(-c1ccc(C(=O)O)cc1)nn2-c1c(F)cccc1F\n"}
+,{"stream_name":"stdout","time":445.145925374,"data":"  16/500\r  16/500\r  32/500\r  32/500\r  48/500\r  48/500\r  64/500\r  64/500\r  80/500\r  80/500\r  96/500\r  96/500\r  112/500\r  112/500\r  128/500\r  128/500\r  144/500\r  144/500\r  160/500\r  160/500\r  176/500\r  176/500\r  192/500\r  192/500\r  208/500\r  208/500\r  224/500\r  224/500\r  240/500\r  240/500\r  256/500\r  256/500\r  272/500\r  272/500\r  288/500\r  288/500\r  304/500\r  304/500\r  320/500\r  320/500\r  336/500\r  336/500\r  352/500\r  352/500\r  368/500\r  368/500\r  384/500\r  384/500\r  400/500\r  400/500\r  416/500\r  416/500\r  432/500\r  432/500\r  448/500\r  448/500\r  464/500\r  464/500\r  480/500\r  480/500\r  496/500\r  496/500\r  500/500\r  500/500\rfew_shot {'n': 500, 'valid': 316, 'exact': 0, 'valid_pct': 63.2, 'exact_pct': 0.0, 'valid_ci95': [58.89, 67.31], 'exact_ci95': [0.0, 0.76], 'seconds_per_answer': 0.4359}\n"}
+,{"stream_name":"stdout","time":445.145982317,"data":"  example reply: 'CC(=O)OCC(=O)OCC(=O)OCC(=O)OC' | true product: COc1ncc(Cl)c2c1c(-c1ccc(C(=O)O)cc1)nn2-c1c(F)cccc1F\n"}
+,{"stream_name":"stdout","time":445.348300448,"data":"few_shot {'n': 500, 'valid': 316, 'exact': 0, 'valid_pct': 63.2, 'exact_pct': 0.0, 'valid_ci95': [58.89, 67.31], 'exact_ci95': [0.0, 0.76], 'seconds_per_answer': 0.4359}\n"}
+,{"stream_name":"stdout","time":445.348338626,"data":"  example reply: 'CC(=O)OCC(=O)OCC(=O)OCC(=O)OC' | true product: COc1ncc(Cl)c2c1c(-c1ccc(C(=O)O)cc1)nn2-c1c(F)cccc1F\n"}
+,{"stream_name":"stdout","time":656.097362228,"data":"  16/500\r  16/500\r  32/500\r  32/500\r  48/500\r  48/500\r  64/500\r  64/500\r  80/500\r  80/500\r  96/500\r  96/500\r  112/500\r  112/500\r  128/500\r  128/500\r  144/500\r  144/500\r  160/500\r  160/500\r  176/500\r  176/500\r  192/500\r  192/500\r  208/500\r  208/500\r  224/500\r  224/500\r  240/500\r  240/500\r  256/500\r  256/500\r  272/500\r  272/500\r  288/500\r  288/500\r  304/500\r  304/500\r  320/500\r  320/500\r  336/500\r  336/500\r  352/500\r  352/500\r  368/500\r  368/500\r  384/500\r  384/500\r  400/500\r  400/500\r  416/500\r  416/500\r  432/500\r  432/500\r  448/500\r  448/500\r  464/500\r  464/500\r  480/500\r  480/500\r  496/500\r  496/500\r  500/500\r  500/500\rretrieval {'n': 500, 'valid': 330, 'exact': 4, 'valid_pct': 66.0, 'exact_pct': 0.8, 'valid_ci95': [61.74, 70.02], 'exact_ci95': [0.31, 2.04], 'seconds_per_answer': 0.4214}\n"}
+,{"stream_name":"stdout","time":656.097419335,"data":"  example reply: 'CC(=O)Cl' | true product: COc1ncc(Cl)c2c1c(-c1ccc(C(=O)O)cc1)nn2-c1c(F)cccc1F\n"}
+,{"stream_name":"stderr","time":656.11812476,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":656.120904005,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 280, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":656.120918251,"data":"    main()\n"}
+,{"stream_name":"stderr","time":656.120921695,"data":"    ~~~~^^\n"}
+,{"stream_name":"stderr","time":656.120924783,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 268, in main\n"}
+,{"stream_name":"stderr","time":656.120944563,"data":"    model = train_lora(model, tokenizer, data)\n"}
+,{"stream_name":"stderr","time":656.120949634,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 182, in train_lora\n"}
+,{"stream_name":"stderr","time":656.120955151,"data":"    model = get_peft_model(model, config)\n"}
+,{"stream_name":"stderr","time":656.120960151,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/mapping_func.py\", line 198, in get_peft_model\n"}
+,{"stream_name":"stderr","time":656.120965304,"data":"    return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](\n"}
+,{"stream_name":"stderr","time":656.120970288,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":656.120974617,"data":"        model,\n"}
+,{"stream_name":"stderr","time":656.120978649,"data":"        ^^^^^^\n"}
+,{"stream_name":"stderr","time":656.120982675,"data":"    ...\u003c3 lines\u003e...\n"}
+,{"stream_name":"stderr","time":656.120986856,"data":"        low_cpu_mem_usage=low_cpu_mem_usage,\n"}
+,{"stream_name":"stderr","time":656.120990942,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.120996858,"data":"    )\n"}
+,{"stream_name":"stderr","time":656.121004054,"data":"    ^\n"}
+,{"stream_name":"stderr","time":656.121006952,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/peft_model.py\", line 2082, in __init__\n"}
+,{"stream_name":"stderr","time":656.121009935,"data":"    super().__init__(model, peft_config, adapter_name, **kwargs)\n"}
+,{"stream_name":"stderr","time":656.121012756,"data":"    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.12101558,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/peft_model.py\", line 177, in __init__\n"}
+,{"stream_name":"stderr","time":656.121018561,"data":"    self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)\n"}
+,{"stream_name":"stderr","time":656.121021424,"data":"                      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.121032231,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py\", line 344, in __init__\n"}
+,{"stream_name":"stderr","time":656.121034918,"data":"    self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict)\n"}
+,{"stream_name":"stderr","time":656.121037263,"data":"    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.121039594,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py\", line 978, in inject_adapter\n"}
+,{"stream_name":"stderr","time":656.121042029,"data":"    self._create_and_replace(\n"}
+,{"stream_name":"stderr","time":656.121044194,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":656.121046345,"data":"        peft_config, adapter_name, target, target_name, parent, current_key=key\n"}
+,{"stream_name":"stderr","time":656.121048577,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.121050828,"data":"    )\n"}
+,{"stream_name":"stderr","time":656.121052935,"data":"    ^\n"}
+,{"stream_name":"stderr","time":656.121055026,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py\", line 389, in _create_and_replace\n"}
+,{"stream_name":"stderr","time":656.121058031,"data":"    new_module = self._create_new_module(lora_config, adapter_name, target, device_map=device_map, **kwargs)\n"}
+,{"stream_name":"stderr","time":656.121060546,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py\", line 552, in _create_new_module\n"}
+,{"stream_name":"stderr","time":656.121062901,"data":"    new_module = dispatcher(target, adapter_name, config=lora_config, **kwargs)\n"}
+,{"stream_name":"stderr","time":656.121065138,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py\", line 160, in dispatch_torchao\n"}
+,{"stream_name":"stderr","time":656.121067501,"data":"    if not is_torchao_available():\n"}
+,{"stream_name":"stderr","time":656.121069692,"data":"           ~~~~~~~~~~~~~~~~~~~~^^\n"}
+,{"stream_name":"stderr","time":656.121071865,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/import_utils.py\", line 162, in is_torchao_available\n"}
+,{"stream_name":"stderr","time":656.121074348,"data":"    raise ImportError(\n"}
+,{"stream_name":"stderr","time":656.121076491,"data":"    ...\u003c2 lines\u003e...\n"}
+,{"stream_name":"stderr","time":656.1210787,"data":"    )\n"}
+,{"stream_name":"stderr","time":656.121080796,"data":"ImportError: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported\n"}
+,{"stream_name":"stdout","time":656.300613074,"data":"retrieval {'n': 500, 'valid': 330, 'exact': 4, 'valid_pct': 66.0, 'exact_pct': 0.8, 'valid_ci95': [61.74, 70.02], 'exact_ci95': [0.31, 2.04], 'seconds_per_answer': 0.4214}\n"}
+,{"stream_name":"stdout","time":656.300646802,"data":"  example reply: 'CC(=O)Cl' | true product: COc1ncc(Cl)c2c1c(-c1ccc(C(=O)O)cc1)nn2-c1c(F)cccc1F\n"}
+,{"stream_name":"stderr","time":656.321230266,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":656.321254911,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 280, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":656.321260818,"data":"    main()\n"}
+,{"stream_name":"stderr","time":656.321264149,"data":"    ~~~~^^\n"}
+,{"stream_name":"stderr","time":656.321267436,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 268, in main\n"}
+,{"stream_name":"stderr","time":656.321283409,"data":"    model = train_lora(model, tokenizer, data)\n"}
+,{"stream_name":"stderr","time":656.321292257,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 182, in train_lora\n"}
+,{"stream_name":"stderr","time":656.321295007,"data":"    model = get_peft_model(model, config)\n"}
+,{"stream_name":"stderr","time":656.321297256,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/mapping_func.py\", line 198, in get_peft_model\n"}
+,{"stream_name":"stderr","time":656.321299628,"data":"    return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](\n"}
+,{"stream_name":"stderr","time":656.321301965,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":656.321304196,"data":"        model,\n"}
+,{"stream_name":"stderr","time":656.321306361,"data":"        ^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321308587,"data":"    ...\u003c3 lines\u003e...\n"}
+,{"stream_name":"stderr","time":656.321310852,"data":"        low_cpu_mem_usage=low_cpu_mem_usage,\n"}
+,{"stream_name":"stderr","time":656.321313052,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321315322,"data":"    )\n"}
+,{"stream_name":"stderr","time":656.321317463,"data":"    ^\n"}
+,{"stream_name":"stderr","time":656.321319677,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/peft_model.py\", line 2082, in __init__\n"}
+,{"stream_name":"stderr","time":656.32132199,"data":"    super().__init__(model, peft_config, adapter_name, **kwargs)\n"}
+,{"stream_name":"stderr","time":656.321324294,"data":"    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321326972,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/peft_model.py\", line 177, in __init__\n"}
+,{"stream_name":"stderr","time":656.321345651,"data":"    self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)\n"}
+,{"stream_name":"stderr","time":656.32135006,"data":"                      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321353904,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py\", line 344, in __init__\n"}
+,{"stream_name":"stderr","time":656.321358083,"data":"    self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict)\n"}
+,{"stream_name":"stderr","time":656.321362654,"data":"    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321366239,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py\", line 978, in inject_adapter\n"}
+,{"stream_name":"stderr","time":656.321369759,"data":"    self._create_and_replace(\n"}
+,{"stream_name":"stderr","time":656.321372975,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":656.321376174,"data":"        peft_config, adapter_name, target, target_name, parent, current_key=key\n"}
+,{"stream_name":"stderr","time":656.32137956,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321382988,"data":"    )\n"}
+,{"stream_name":"stderr","time":656.321386201,"data":"    ^\n"}
+,{"stream_name":"stderr","time":656.321390644,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py\", line 389, in _create_and_replace\n"}
+,{"stream_name":"stderr","time":656.321394198,"data":"    new_module = self._create_new_module(lora_config, adapter_name, target, device_map=device_map, **kwargs)\n"}
+,{"stream_name":"stderr","time":656.321401917,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py\", line 552, in _create_new_module\n"}
+,{"stream_name":"stderr","time":656.3214057,"data":"    new_module = dispatcher(target, adapter_name, config=lora_config, **kwargs)\n"}
+,{"stream_name":"stderr","time":656.321413715,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py\", line 160, in dispatch_torchao\n"}
+,{"stream_name":"stderr","time":656.321416354,"data":"    if not is_torchao_available():\n"}
+,{"stream_name":"stderr","time":656.321418581,"data":"           ~~~~~~~~~~~~~~~~~~~~^^\n"}
+,{"stream_name":"stderr","time":656.321420859,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/import_utils.py\", line 162, in is_torchao_available\n"}
+,{"stream_name":"stderr","time":656.321423216,"data":"    raise ImportError(\n"}
+,{"stream_name":"stderr","time":656.321425394,"data":"    ...\u003c2 lines\u003e...\n"}
+,{"stream_name":"stderr","time":656.321428473,"data":"    )\n"}
+,{"stream_name":"stderr","time":656.321442169,"data":"ImportError: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported\n"}
+,{"stream_name":"stderr","time":656.321446432,"data":"\n"}
+,{"stream_name":"stderr","time":656.321450012,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":656.321454064,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 280, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":656.321458651,"data":"    main()\n"}
+,{"stream_name":"stderr","time":656.321461902,"data":"    ~~~~^^\n"}
+,{"stream_name":"stderr","time":656.321465119,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 268, in main\n"}
+,{"stream_name":"stderr","time":656.321468636,"data":"    model = train_lora(model, tokenizer, data)\n"}
+,{"stream_name":"stderr","time":656.321471907,"data":"  File \"/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py\", line 182, in train_lora\n"}
+,{"stream_name":"stderr","time":656.321475413,"data":"    model = get_peft_model(model, config)\n"}
+,{"stream_name":"stderr","time":656.321478666,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/mapping_func.py\", line 198, in get_peft_model\n"}
+,{"stream_name":"stderr","time":656.321482239,"data":"    return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](\n"}
+,{"stream_name":"stderr","time":656.321485542,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":656.321488874,"data":"        model,\n"}
+,{"stream_name":"stderr","time":656.321492081,"data":"        ^^^^^^\n"}
+,{"stream_name":"stderr","time":656.32149522,"data":"    ...\u003c3 lines\u003e...\n"}
+,{"stream_name":"stderr","time":656.321498497,"data":"        low_cpu_mem_usage=low_cpu_mem_usage,\n"}
+,{"stream_name":"stderr","time":656.321501711,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321508082,"data":"    )\n"}
+,{"stream_name":"stderr","time":656.32151327,"data":"    ^\n"}
+,{"stream_name":"stderr","time":656.321520541,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/peft_model.py\", line 2082, in __init__\n"}
+,{"stream_name":"stderr","time":656.321523406,"data":"    super().__init__(model, peft_config, adapter_name, **kwargs)\n"}
+,{"stream_name":"stderr","time":656.321537001,"data":"    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321541088,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/peft_model.py\", line 177, in __init__\n"}
+,{"stream_name":"stderr","time":656.321549235,"data":"    self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)\n"}
+,{"stream_name":"stderr","time":656.32155446,"data":"                      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321558616,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py\", line 344, in __init__\n"}
+,{"stream_name":"stderr","time":656.321562184,"data":"    self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict)\n"}
+,{"stream_name":"stderr","time":656.321565692,"data":"    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321569472,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py\", line 978, in inject_adapter\n"}
+,{"stream_name":"stderr","time":656.321573127,"data":"    self._create_and_replace(\n"}
+,{"stream_name":"stderr","time":656.321576374,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":656.32157976,"data":"        peft_config, adapter_name, target, target_name, parent, current_key=key\n"}
+,{"stream_name":"stderr","time":656.321583116,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":656.321586487,"data":"    )\n"}
+,{"stream_name":"stderr","time":656.321589607,"data":"    ^\n"}
+,{"stream_name":"stderr","time":656.321592866,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py\", line 389, in _create_and_replace\n"}
+,{"stream_name":"stderr","time":656.321596412,"data":"    new_module = self._create_new_module(lora_config, adapter_name, target, device_map=device_map, **kwargs)\n"}
+,{"stream_name":"stderr","time":656.321599794,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py\", line 552, in _create_new_module\n"}
+,{"stream_name":"stderr","time":656.321604214,"data":"    new_module = dispatcher(target, adapter_name, config=lora_config, **kwargs)\n"}
+,{"stream_name":"stderr","time":656.321609306,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py\", line 160, in dispatch_torchao\n"}
+,{"stream_name":"stderr","time":656.321616261,"data":"    if not is_torchao_available():\n"}
+,{"stream_name":"stderr","time":656.32161939,"data":"           ~~~~~~~~~~~~~~~~~~~~^^\n"}
+,{"stream_name":"stderr","time":656.321633829,"data":"  File \"/usr/local/lib/python3.13/dist-packages/peft/import_utils.py\", line 162, in is_torchao_available\n"}
+,{"stream_name":"stderr","time":656.321638166,"data":"    raise ImportError(\n"}
+,{"stream_name":"stderr","time":656.321642093,"data":"    ...\u003c2 lines\u003e...\n"}
+,{"stream_name":"stderr","time":656.321645932,"data":"    )\n"}
+,{"stream_name":"stderr","time":656.321649151,"data":"ImportError: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported\n"}
+,{"stream_name":"stderr","time":660.340528003,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":660.341179307,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":660.341197218,"data":"    import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)\n"}
+,{"stream_name":"stderr","time":660.34120305,"data":"                                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":660.341216025,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":660.341219847,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":660.341223111,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":660.341226322,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":660.341229993,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":660.341233502,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":660.341236882,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":660.341240777,"data":"Exception encountered at \"In [2]\":\n"}
+,{"stream_name":"stderr","time":660.341244042,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":660.341247487,"data":"CalledProcessError                        Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":660.341250957,"data":"/tmp/ipykernel_24/3726340027.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":660.341254769,"data":"     18 # Run the script from the dataset folder: it puts its own folder on sys.path, so it\n"}
+,{"stream_name":"stderr","time":660.341259025,"data":"     19 # imports grading.py from there and nothing needs copying.\n"}
+,{"stream_name":"stderr","time":660.341262452,"data":"---\u003e 20 subprocess.run([sys.executable, os.path.join(base, \"run_lora.py\")], check=True)\n"}
+,{"stream_name":"stderr","time":660.341266274,"data":"\n"}
+,{"stream_name":"stderr","time":660.341269388,"data":"/usr/lib/python3.13/subprocess.py in run(input, capture_output, timeout, check, *popenargs, **kwargs)\n"}
+,{"stream_name":"stderr","time":660.341272905,"data":"    576         retcode = process.poll()\n"}
+,{"stream_name":"stderr","time":660.341276299,"data":"    577         if check and retcode:\n"}
+,{"stream_name":"stderr","time":660.341279632,"data":"--\u003e 578             raise CalledProcessError(retcode, process.args,\n"}
+,{"stream_name":"stderr","time":660.341283,"data":"    579                                      output=stdout, stderr=stderr)\n"}
+,{"stream_name":"stderr","time":660.341286667,"data":"    580     return CompletedProcess(process.args, retcode, stdout, stderr)\n"}
+,{"stream_name":"stderr","time":660.341290139,"data":"\n"}
+,{"stream_name":"stderr","time":660.341293225,"data":"CalledProcessError: Command '['/usr/bin/python3', '/kaggle/input/datasets/pranaysarkar04/reactiongraph/run_lora.py']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":660.341297163,"data":"\n"}
+,{"stream_name":"stderr","time":662.457747203,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":662.457774513,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":662.61495558,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":662.614977763,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":663.361706291,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":663.445560922,"data":"[NbConvertApp] Writing 11299 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":665.863687369,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":666.346976142,"data":"[NbConvertApp] Writing 285991 bytes to __results__.html\n"}
 ]
