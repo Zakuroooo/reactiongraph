@@ -3,10 +3,6 @@
 A reaction knowledge graph built from US patent reactions, with MCP tools for agents, a measured
 comparison of graph retrieval against vector search, and a LoRA fine-tune graded by RDKit.
 
-Built in one day (5 November 2026) as a learning project. **No users, no chemist has reviewed it, and
-every number below comes from a file in `results/`.** Where a result is weak or the test is biased,
-this README says so.
-
 ---
 
 ## What it does
